@@ -1,5 +1,6 @@
 const path = require('path');
 
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const baseDir = process.cwd();
@@ -36,6 +37,7 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(['build/']),
     new HtmlWebPackPlugin({
       template: './app/index.html',
       filename: './index.html',
